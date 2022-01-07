@@ -82,6 +82,7 @@ export default {
               this.noData = true
             }else{
               this.noData = false
+              this.$emit('startGallery', [], 5, 0)
             }
           })
 
