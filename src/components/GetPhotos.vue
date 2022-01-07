@@ -1,6 +1,6 @@
 <template>
   <!--  {{ query }}-->
-  <div class="w-full lg:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 items-end mb-6">
+  <div class="w-full lg:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-10 md:gap-x-20 items-end mb-6">
     <div class="flex flex-col justify-start items-center w-full ">
       <p class="mb-2 text-lg">Number of images:</p>
       <input type="number" min="1" max="50" v-model="amount"
@@ -15,6 +15,7 @@
       <button @click="getData" class="bg-blue-600 text-white text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
       </button>
     </div>
+    <p v-if="!noData" class="col-start-2 col-end-5  text-lg text-gray-700 mt-4">No photos found on this date.</p>
 
   </div>
 
@@ -32,7 +33,7 @@
 <!--    </div>-->
 
 
-
+<!--  <p v-if="dataFromServer.photos.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>-->
 
 </template>
 
@@ -51,6 +52,7 @@ export default {
       page: 1,
       date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + (new Date().getDate())).slice(-2),
       query: null,
+      noData: true
     }
   },
   beforeMount() {
@@ -61,6 +63,9 @@ export default {
       if (this.amount > 50) {
         this.amount = 50
       }
+    },
+    dataFromServer(){
+      this.$emit('startGallery', [], 5, 0)
     }
   }
   ,
@@ -75,7 +80,12 @@ export default {
       axios.get(this.query)
           .then(response => {
             this.dataFromServer = response.data
-            this.$emit('startGallery', this.dataFromServer, 5, this.amount)
+            if(this.dataFromServer.photos.length>0) {
+              this.$emit('startGallery', this.dataFromServer, 5, this.amount)
+              this.noData = true
+            }else{
+              this.noData = false
+            }
           })
 
     }
@@ -85,7 +95,7 @@ export default {
       this.$emit('startGallery', this.dataFromServer, idx, this.amount)
     },
 
-  }
+  },
 }
 </script>
 

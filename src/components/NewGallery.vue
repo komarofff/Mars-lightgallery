@@ -1,4 +1,5 @@
 <template>
+
   <div  class="container mx-auto">
   <lightgallery
       :settings="{ speed: 500, plugins: plugins }"
@@ -7,18 +8,6 @@
       class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20"
   >
 
-    <!--    <div v-for="item in dataFromServer" class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20">-->
-    <!--      <template v-for="(photo,idx) in item">-->
-    <!--        <div v-if="idx < amountOfPhotos" @click="openGallery(idx)"-->
-    <!--             class="flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer" >-->
-    <!--          <img :src="photo.img_src" class="w-full h-full object-cover"-->
-    <!--              >-->
-    <!--          <p class="text-xl">{{ photo.id }}</p>-->
-    <!--          <p>{{ photo.earth_date }}</p>-->
-    <!--        </div>-->
-    <!--      </template>-->
-    <!--      <p v-if="item.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>-->
-    <!--    </div>-->
 
     <a v-for="photo in arr"
         data-lg-size="1406-1390"
@@ -29,7 +18,7 @@
     >
       <img
           style="object-fit:cover;"
-          class="img-responsive"
+          class="img-responsive w-full h-full object-cover"
           :src="photo.img_src"
       />
       <p class="text-xl">{{ photo.id }}</p>
@@ -56,6 +45,13 @@ props: ['photoList', 'startIndex', 'amount'],
     this.arr.push(this.photoList[i])
   }
   },
+  // watch:{
+  // arr(){
+  //   for(let i=0;i<this.amount;i++){
+  //     this.arr.push(this.photoList[i])
+  //   }
+  // }
+  // },
   data: () => ({
     plugins: [lgZoom, lgVideo,lgThumb],
     arr:[]
