@@ -12,7 +12,7 @@
              class="border border-gray-200 text-lg rounded-lg w-full p-2 h-12  focus:border-4 focus:border-blue-200 outline-none">
     </div>
     <div class="flex justify-center">
-      <button @click="getData" class="mt-4 md:mt-0 bg-blue-600 text-white text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
+      <button @click="getData" class="mt-4 md:mt-0 border border-blue-600 hover:bg-white bg-blue-600 text-white hover:text-blue-600 text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
       </button>
     </div>
 
