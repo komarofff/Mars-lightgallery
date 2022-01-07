@@ -22,16 +22,18 @@
 
     <a v-for="photo in arr"
         data-lg-size="1406-1390"
-        class="gallery-item"
+        class="gallery-item flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer"
         :data-src="photo.img_src"
         data-sub-html="<h4></h4> <p> </p>"
-        style="display: inline-block"
+
     >
       <img
           style="object-fit:cover;"
           class="img-responsive"
           :src="photo.img_src"
       />
+      <p class="text-xl">{{ photo.id }}</p>
+     <p>{{ photo.earth_date }}</p>
     </a>
 
 
