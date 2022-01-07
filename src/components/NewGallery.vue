@@ -1,7 +1,7 @@
 <template>
 
   <div  class="container mx-auto">
-  <lightgallery
+  <lightgallery :key="componentKey"
       :settings="{ speed: 500, plugins: plugins }"
       :onInit="onInit"
       :onBeforeSlide="onBeforeSlide"
@@ -14,12 +14,13 @@
         class="gallery-item flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer"
         :data-src="photo.img_src"
         data-sub-html="<h4></h4> <p> </p>"
-
+        :key="photo.id"
     >
       <img
           style="object-fit:cover;"
           class="img-responsive w-full h-full object-cover"
           :src="photo.img_src"
+          :key="photo.img_src"
       />
       <p class="text-xl">{{ photo.id }}</p>
      <p>{{ photo.earth_date }}</p>
@@ -47,15 +48,16 @@ props: ['photoList', 'startIndex', 'amount'],
   },
   data: () => ({
     plugins: [lgZoom, lgVideo,lgThumb],
-    arr:[]
+    arr:[],
+    componentKey: 0
   }),
   watch:{
     photoList(){
-    alert('array was changed')
       this.arr =[]
       for(let i=0;i<this.amount;i++){
         this.arr.push(this.photoList[i])
       }
+      this.forceRerender()
   }
   },
   methods: {
@@ -65,6 +67,9 @@ props: ['photoList', 'startIndex', 'amount'],
     onBeforeSlide: () => {
       console.log('calling before slide');
     },
+    forceRerender() {
+      this.componentKey += 1
+    }
   },
 };
 </script>
