@@ -65,7 +65,7 @@ export default {
       }
     },
     dataFromServer(){
-      this.$emit('startGallery', [], 5, 0)
+      this.$emit('startGallery', this.dataFromServer, 5, this.amount)
     }
   }
   ,

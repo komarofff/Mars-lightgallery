@@ -45,13 +45,6 @@ props: ['photoList', 'startIndex', 'amount'],
     this.arr.push(this.photoList[i])
   }
   },
-  // watch:{
-  // arr(){
-  //   for(let i=0;i<this.amount;i++){
-  //     this.arr.push(this.photoList[i])
-  //   }
-  // }
-  // },
   data: () => ({
     plugins: [lgZoom, lgVideo,lgThumb],
     arr:[]
