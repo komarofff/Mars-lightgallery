@@ -12,28 +12,13 @@
              class="border border-gray-200 text-lg rounded-lg w-full p-2 h-12  focus:border-4 focus:border-blue-200 outline-none">
     </div>
     <div class="flex justify-center">
-      <button @click="getData" class="bg-blue-600 text-white text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
+      <button @click="getData" class="mt-4 md:mt-0 bg-blue-600 text-white text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
       </button>
     </div>
 
   </div>
   <p v-if="!noData" class="col-start-2 col-end-5  text-lg text-gray-700 mt-4">No photos found on this date.</p>
 
-<!--    <div v-for="item in dataFromServer" class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20">-->
-<!--      <template v-for="(photo,idx) in item">-->
-<!--        <div v-if="idx < amountOfPhotos" @click="openGallery(idx)"-->
-<!--             class="flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer" >-->
-<!--          <img :src="photo.img_src" class="w-full h-full object-cover"-->
-<!--              >-->
-<!--          <p class="text-xl">{{ photo.id }}</p>-->
-<!--          <p>{{ photo.earth_date }}</p>-->
-<!--        </div>-->
-<!--      </template>-->
-<!--      <p v-if="item.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>-->
-<!--    </div>-->
-
-
-<!--  <p v-if="dataFromServer.photos.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>-->
 
 </template>
 
