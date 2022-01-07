@@ -1,73 +1,42 @@
 <template>
+  <div  class="container mx-auto">
   <lightgallery
       :settings="{ speed: 500, plugins: plugins }"
       :onInit="onInit"
       :onBeforeSlide="onBeforeSlide"
+      class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20"
   >
 
+    <!--    <div v-for="item in dataFromServer" class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20">-->
+    <!--      <template v-for="(photo,idx) in item">-->
+    <!--        <div v-if="idx < amountOfPhotos" @click="openGallery(idx)"-->
+    <!--             class="flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer" >-->
+    <!--          <img :src="photo.img_src" class="w-full h-full object-cover"-->
+    <!--              >-->
+    <!--          <p class="text-xl">{{ photo.id }}</p>-->
+    <!--          <p>{{ photo.earth_date }}</p>-->
+    <!--        </div>-->
+    <!--      </template>-->
+    <!--      <p v-if="item.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>-->
+    <!--    </div>-->
 
-
-<!--    <a-->
-<!--        data-lg-size="1406-1390"-->
-<!--        class="gallery-item"-->
-<!--        data-src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"-->
-<!--        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>"-->
-<!--    >-->
-<!--      <img-->
-<!--          class="img-responsive"-->
-<!--          src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80"-->
-<!--      />-->
-<!--    </a>-->
-<!--    <a-->
-<!--        data-lg-size="1400-1400"-->
-<!--        class="gallery-item"-->
-<!--        data-src="https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"-->
-<!--        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@asoshiation' >Shah </a></h4><p> Location - <a href='https://unsplash.com/s/photos/shinimamiya%2C-osaka%2C-japan'>Shinimamiya, Osaka, Japan</a></p>"-->
-<!--    >-->
-<!--      <img-->
-<!--          class="img-responsive"-->
-<!--          src="https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80"-->
-<!--      />-->
-<!--    </a>-->
-<!--    <a-->
-<!--        data-lg-size="1400-1400"-->
-<!--        class="gallery-item"-->
-<!--        data-src="https://images.unsplash.com/photo-1584592740039-cddf0671f3d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"-->
-<!--        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@katherine_xx11' >Katherine Gu </a></h4><p> For all those years we were alone and helpless.</p>"-->
-<!--    >-->
-<!--      <img-->
-<!--          style="width: 200px"-->
-<!--          class="img-responsive"-->
-<!--          src="https://images.unsplash.com/photo-1584592740039-cddf0671f3d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80"-->
-<!--      />-->
-<!--    </a>-->
-<!--    <a-->
-<!--        class="gallery-item"-->
-<!--        data-video='{"source": [{"src":"https://www.lightgalleryjs.com/videos/video1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'-->
-<!--        data-poster=""-->
-<!--        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@katherine_xx11' >Katherine Gu </a></h4><p> For all those years we were alone and helpless.</p>"-->
-<!--    >-->
-<!--      <img-->
-<!--          width="200"-->
-<!--          class="img-responsive"-->
-<!--          src="https://www.lightgalleryjs.com/images/demo/html5-video-poster.jpg"-->
-<!--      />-->
-<!--    </a>-->
     <a v-for="photo in arr"
         data-lg-size="1406-1390"
         class="gallery-item"
         :data-src="photo.img_src"
         data-sub-html="<h4></h4> <p> </p>"
-        style="display: inline"
+        style="display: inline-block"
     >
       <img
-          style="width:200px;"
+          style="object-fit:cover;"
           class="img-responsive"
           :src="photo.img_src"
       />
     </a>
-  </lightgallery>
 
+
+  </lightgallery>
+  </div>
 </template>
 
 <script>
@@ -111,4 +80,5 @@ body {
 .gallery-item {
   margin: 5px;
 }
+
 </style>
