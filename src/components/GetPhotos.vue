@@ -38,9 +38,9 @@
           :onBeforeSlide="onBeforeSlide"
       >
 
-        <div v-for="item in dataFromServer" class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20">
+        <template v-for="item in dataFromServer">
           <template v-for="(photo,idx) in item">
-            <div v-if="idx < amountOfPhotos" class="flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer">
+            <template v-if="idx < amountOfPhotos" >
         <a
 
             data-lg-size="1406-1390"
@@ -53,12 +53,12 @@
               :src="photo.img_src"
           />
         </a>
-                      <p class="text-xl">{{ photo.id }}</p>
-                      <p>{{ photo.earth_date }}</p>
-          </div>
+<!--                      <p class="text-xl">{{ photo.id }}</p>-->
+<!--                      <p>{{ photo.earth_date }}</p>-->
           </template>
-           <p v-if="item.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>
-        </div>
+          </template>
+<!--           <p v-if="item.length == 0" class="col-start-1 col-end-5  text-lg text-gray-700">No photos found on this date.</p>-->
+        </template>
 
       </lightgallery>
 
