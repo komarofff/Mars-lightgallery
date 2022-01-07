@@ -49,6 +49,15 @@ props: ['photoList', 'startIndex', 'amount'],
     plugins: [lgZoom, lgVideo,lgThumb],
     arr:[]
   }),
+  watch:{
+    photoList(){
+    alert('array was changed')
+      this.arr =[]
+      for(let i=0;i<this.amount;i++){
+        this.arr.push(this.photoList[i])
+      }
+  }
+  },
   methods: {
     onInit: () => {
       console.log('lightGallery has been initialized');

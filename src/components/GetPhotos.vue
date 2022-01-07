@@ -15,9 +15,9 @@
       <button @click="getData" class="bg-blue-600 text-white text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
       </button>
     </div>
-    <p v-if="!noData" class="col-start-2 col-end-5  text-lg text-gray-700 mt-4">No photos found on this date.</p>
 
   </div>
+  <p v-if="!noData" class="col-start-2 col-end-5  text-lg text-gray-700 mt-4">No photos found on this date.</p>
 
 <!--    <div v-for="item in dataFromServer" class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20">-->
 <!--      <template v-for="(photo,idx) in item">-->
@@ -64,9 +64,6 @@ export default {
         this.amount = 50
       }
     },
-    dataFromServer(){
-      this.$emit('startGallery', this.dataFromServer, 5, this.amount)
-    }
   }
   ,
   computed: {
