@@ -89,7 +89,4 @@ body {
   margin: 0;
 }
 
-.gallery-item {
-  margin: 5px;
-}
 </style>

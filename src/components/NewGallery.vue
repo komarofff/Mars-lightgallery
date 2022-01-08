@@ -11,7 +11,7 @@
 
     <a v-for="photo in arr"
         data-lg-size="1406-1390"
-        class="gallery-item w-image h-88 flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer "
+        class="gallery-item w-image h-88 flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer  "
         :data-src="photo.img_src"
         :data-sub-html="'<h4>'+photo.camera.name+'</h4> <p>'+ photo.camera.full_name +' </p>'"
         :key="photo.id"
@@ -83,7 +83,7 @@ body {
   margin: 0;
 }
 .gallery-item {
-  margin: 5px;
+  margin: 10px;
 }
 .w-image{
   width: 20%;
