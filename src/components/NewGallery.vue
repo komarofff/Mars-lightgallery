@@ -5,7 +5,7 @@
       :settings="{ speed: 500, plugins: plugins }"
       :onInit="onInit"
       :onBeforeSlide="onBeforeSlide"
-      class="min-w-screen  grid grid-cols-1 md:grid-cols-4 gap-20"
+      class="min-w-screen  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10 xl:gap-20"
   >
 
 
