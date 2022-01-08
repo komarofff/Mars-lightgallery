@@ -2,17 +2,17 @@
   <!--  {{ query }}-->
   <div class="w-full lg:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-10 md:gap-x-20 items-end mb-6">
     <div class="flex flex-col justify-start items-center w-full ">
-      <p class="mb-2 text-lg">Number of images:</p>
+      <p class="mt-4 md:mt-0 mb-2 text-lg">Number of images:</p>
       <input type="number" min="1" max="50" v-model="amount"
              class="border border-gray-200 text-xl rounded-lg w-full p-2 h-12 focus:border-4 focus:border-blue-200 outline-none">
     </div>
     <div class="flex flex-col justify-start items-center w-full ">
-      <p class="mb-2 text-lg">Select date:</p>
+      <p class="mt-4 md:mt-0  mb-2 text-lg">Select date:</p>
       <input type="date" v-model="date"
              class="border border-gray-200 text-lg rounded-lg w-full p-2 h-12  focus:border-4 focus:border-blue-200 outline-none">
     </div>
     <div class="flex justify-center">
-      <button @click="getData" class="mt-4 md:mt-0 border border-blue-600 hover:bg-white bg-blue-600 text-white hover:text-blue-600 text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
+      <button @click="getData" class="w-1/2 md:w-full mt-4 md:mt-0 border border-blue-600 hover:bg-white bg-blue-600 text-white hover:text-blue-600 text-lg rounded-lg py-2 px-8 self-center h-12"> Submit
       </button>
     </div>
 
