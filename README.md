@@ -1,4 +1,4 @@
-# test
+# Photos of Mars (from NASA)
 
 ## Project setup
 ```
