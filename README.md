@@ -1,5 +1,6 @@
 # Photos of Mars (from NASA)
-
+### Vue.js, Light gallery.
+## Anatoliy komarov
 ## Project setup
 ```
 npm install
