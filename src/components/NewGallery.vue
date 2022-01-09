@@ -43,7 +43,9 @@ props: ['photoList', 'startIndex', 'amount'],
   },
   beforeMount() {
   for(let i=0;i<this.amount;i++){
-    this.arr.push(this.photoList[i])
+    if(this.photoList[i] !== undefined) {
+      this.arr.push(this.photoList[i])
+    }
   }
   },
   data: () => ({
@@ -55,7 +57,9 @@ props: ['photoList', 'startIndex', 'amount'],
     photoList(){
       this.arr =[]
       for(let i=0;i<this.amount;i++){
-        this.arr.push(this.photoList[i])
+        if(this.photoList[i] !== undefined) {
+          this.arr.push(this.photoList[i])
+        }
       }
       this.forceRerender()
   }
