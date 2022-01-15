@@ -8,7 +8,7 @@
     </div>
     <div class="flex flex-col justify-start items-center w-full ">
       <p class="mt-4 md:mt-0  mb-2 text-lg">Select date:</p>
-      <input type="date" v-model="date"
+      <input type="date" v-model="date" :max="maxDate"
              class="border border-gray-200 text-lg rounded-lg w-full p-2 h-12  focus:border-4 focus:border-blue-200 outline-none">
     </div>
     <div class="flex justify-center">
@@ -37,11 +37,14 @@ export default {
       page: 1,
       date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + (new Date().getDate())).slice(-2),
       query: null,
-      noData: true
+      noData: true,
+      maxDate: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + (new Date().getDate())).slice(-2),
+
     }
   },
   beforeMount() {
     this.query = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=jQilTRWcRu4qDJtVc2NSQlqEAMCALh7zLDmzoDOT&earth_date=${this.date}`
+
   },
   watch: {
     amount() {
