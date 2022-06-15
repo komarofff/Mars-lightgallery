@@ -49,7 +49,7 @@ export default {
   watch: {
     amount() {
       if (this.amount > 50) {
-        this.amount = 50
+        //this.amount = 50
       }
     },
   }
