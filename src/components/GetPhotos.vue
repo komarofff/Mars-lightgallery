@@ -88,7 +88,7 @@ export default {
           .then(response => {
             this.dataFromServer = response.data
             if(this.dataFromServer.photos.length>0) {
-              this.amount = this.dataFromServer.photos.length
+              //this.amount = this.dataFromServer.photos.length
               this.$emit('startGallery', this.dataFromServer, 5, this.amount)
               this.noData = true
             }else{
