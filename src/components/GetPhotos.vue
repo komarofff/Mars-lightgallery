@@ -25,7 +25,7 @@
   </div>
   <p v-if="!noData" class="col-start-2 col-end-5  text-lg text-gray-700 mt-4">No photos found on this date.</p>
 
-
+<!--{{ dataFromServer }}-->
 </template>
 
 <script>

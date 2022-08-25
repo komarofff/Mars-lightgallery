@@ -13,7 +13,7 @@
         data-lg-size="1406-1390"
         class="gallery-item w-image h-88 flex flex-col justify-start items-center border-2 border-gray-200 bg-white self-straight rounded cursor-pointer  "
         :data-src="photo.img_src"
-        :data-sub-html="'<h4>'+photo.camera.name+'</h4> <p>'+ photo.camera.full_name +' </p>'"
+        :data-sub-html="'<h4> Sol - '+photo.sol+'</h4>'+'<h4>'+photo.camera.name+'</h4> <p>'+ photo.camera.full_name +' </p>'"
         :key="photo.id"
     >
       <img
@@ -22,8 +22,11 @@
           :src="photo.img_src"
           :key="photo.img_src"
       />
-      <p class="text-xl">{{ photo.id }}</p>
-     <p>{{ photo.earth_date }}</p>
+      <p class="text-center"> {{ photo.camera.full_name }}</p>
+      <p class="text-xl">Sol - {{ photo.sol }}</p>
+      <p class="text-xl">ID - {{ photo.id }}</p>
+     <p class="text-xl">Earth date - {{ photo.earth_date }}</p>
+
     </a>
 
 
